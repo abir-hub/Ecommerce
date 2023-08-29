@@ -1,0 +1,237 @@
+
+
+using System;
+
+namespace ECommerce
+{
+
+    public class User
+    {
+        private Boolean role;
+        private String loginID;
+        private String password;
+
+        public void verifyUser() 
+        {
+            Console.WriteLine("User is verified successfullly.");
+        }
+    }
+
+
+
+    public class Customer
+    {
+        private String id;
+        private String address;
+        private String phone;
+        private String email;
+
+        public void lonin() 
+        {
+            Console.WriteLine("The customer is loging successfully.");
+        }
+
+        public void register()
+        {
+            Console.WriteLine("The customer is registered successfully.");
+        }
+
+        public void updateProfile()
+        {
+            Console.WriteLine("The customer's profile is updated successfully.");
+        }
+
+
+    }
+
+    public class ShoppingCart
+    {
+        
+        //DateTime d = DateTime.Now;
+        private DateTime d = DateTime.Now;
+
+        public void addCartItem()
+        {
+            Console.WriteLine("The item is added to the cart.");
+        }
+        public void checkOut()
+        {
+            Console.WriteLine("The item is recently check out by you.");
+        }
+        public void viewCartDetails()
+        {
+            Console.WriteLine("The cart details are showing now....");
+        }
+        public void updateQuantity()
+        {
+            Console.WriteLine("The quantity is added to the cart.");
+        }
+
+
+
+
+
+
+    }
+
+
+    public class Reviews
+    {
+        private String reviewID;
+        private String customerID;
+        private int rating;
+        private String parentID;
+        private String productID;
+
+        public void addReview()
+        {
+            Console.WriteLine("The review is added successfully.");
+        }
+
+        public void editReview()
+        {
+            Console.WriteLine("The review is edited successfully.");
+        }
+
+        public void deleteReview()
+        {
+            Console.WriteLine("The review is deleted successfully.");
+        }
+    }
+
+    public class Orders
+    {
+       private int id;
+        private String customerID;
+        private String sellerID;
+        private String productID;
+        private String totalAmount;
+        private String address;
+        private String deliveryStatus;
+        private DateTime orderDate = DateTime.Now;
+        private DateTime deliveredDate = DateTime.Now;
+
+        public void placeOrder()
+        {
+            Console.WriteLine("The order is placed to deliver to your doorstep shortly");
+        }
+
+
+
+    }
+
+    public class Product
+    {
+        private String productID;
+        private String productName;
+        private int productCost;
+        private String sellerID;
+        //ateTime d = DateTime.Now;
+        private DateTime d=DateTime.Now;
+
+        public void addToCart()
+        {
+            Console.WriteLine("The item is added to cart successfully.");
+
+        }
+
+        public void sellProduct()
+        {
+            Console.WriteLine("Sell the selected item.");
+
+        }
+
+        public void getProductDetails()
+        {
+            Console.WriteLine("Getting the selected Product details....");
+
+        }
+
+        public void buyProduct()
+        {
+            Console.WriteLine("Buying the selected item successfully.");
+
+        }
+
+
+    }
+
+
+    public class Payment
+    {
+        private int ID;
+        private String orderID;
+        private int total;
+        private String details;
+        private Boolean paid;
+
+        private void sendOtp()
+        {
+            Console.WriteLine("OTP is send to your registered mobile number and Email.");
+        }
+
+        private void comfirmTransaction()
+        {
+            Console.WriteLine("The transaction is successfull.");
+        }
+
+        private void getPaymentDetails()
+        {
+            Console.WriteLine("The payment detail is sent to your mailid successfull.");
+        }
+
+        private void makeTransaction()
+        {
+            Console.WriteLine("Please make the transaction.");
+        }
+
+
+
+
+    }
+
+
+    public class Seller
+    {
+        private String id;
+        private String address;
+        private String phone;
+        private String email;
+        private int sellerRating;
+
+        public void lonin()
+        {
+            Console.WriteLine("The customer is loging successfully.");
+        }
+
+        public void register()
+        {
+            Console.WriteLine("The customer is registered successfully.");
+        }
+
+        public void updateProfile()
+        {
+            Console.WriteLine("The customer's profile is updated successfully.");
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+    internal class ECommerce
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}

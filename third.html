@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="myStyle.css">
+    </head>
+    <body>
+        <div class="table-container">
+            <table cell-spacing="10" class="tle">
+                <tr>
+                    <td colspan="4" ><input type="text" id="result" ></td>
+                </tr> 
+                <tr>
+                    <td ><input type="button" value="%" onclick="Solve('%')" class="operator"></td>
+                    <td ><input type="button" value="C" onclick="Clear()" class="operator"></td>
+                    <td ><input type="button" value="B" onclick="Back()" class="operator"></td>
+                    <td ><input type="button" value="/" onclick="Solve('/')" class="operator"></td>
+                </tr>
+                <tr>
+                    <td ><input type="button" value="7" onclick="Solve('7')" class="number"></td>
+                    <td ><input type="button" value="8" onclick="Solve('8')" class="number"></td>
+                    <td ><input type="button" value="9" onclick="Solve('9')" class="number"></td>
+                    <td ><input type="button" value="x" onclick="Solve('*')" class="operator"></td>
+                </tr>
+                <tr>
+                    <td ><input type="button" value="4" onclick="Solve('4')" class="number"></td>
+                    <td ><input type="button" value="5" onclick="Solve('5')" class="number"></td>
+                    <td ><input type="button" value="6" onclick="Solve('6')" class="number"></td>
+                    <td ><input type="button" value="-" onclick="Solve('-')" class="operator"></td>
+                </tr>
+                <tr>
+                    <td ><input type="button" value="1" onclick="Solve('1')" class="number"></td>
+                    <td><input type="button" value="2" onclick="Solve('2')" class="number"></td>
+                    <td ><input type="button" value="3" onclick="Solve('3')" class="number"></td>
+                    <td ><input type="button" value="+" onclick="Solve('+')" class="operator"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="button" value="0" onclick="Solve('0')" class="number"></td>
+                    <td ><input type="button" value="." onclick="Solve('.')" class="number"></td>
+                    <td ><input type="button" value="=" onclick="Result()" id = "result" class="operator" ></td>
+                </tr>
+            </table>
+        </div>
+        
+        <script>
+            function Solve(val) {
+                var v = document.getElementById('result');
+                v.value += val;
+            }
+            function Result(){
+                var num1 = document.getElementById('result').value;
+                var num2 = eval(num1);
+                document.getElementById('result').value = num2;
+            }
+            function Clear() {
+                var inp = document.getElementById('result');
+                inp.value = '';
+            }
+            function Back() {
+                var del = document.getElementById('result');
+                del.value = del.value.slice(0,-1);
+            }
+        </script>
+    </body>
+</html>

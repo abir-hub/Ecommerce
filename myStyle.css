@@ -1,0 +1,30 @@
+body{
+    font-family: 'Source Sans Pro';
+    text-align: right;
+}
+.table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+table{
+    text-align: center;
+}
+.number{
+    background-color: #A8DF8E;
+    border-radius: 50%;
+    border-color: #F3FDE8;
+    
+}
+.operator{
+    background-color: #FFE5E5;
+    border-radius: 30%;
+    border-color: #FFF3DA;
+}
+#result{
+    border-bottom: #F6635C;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}

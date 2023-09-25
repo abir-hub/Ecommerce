@@ -17,42 +17,57 @@ INSERT INTO Login (uname, passwd) VALUES
 
 
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-class Program
+namespace ExerciseADODay28
 {
-    static void Main()
+    internal class Program
     {
-        // Connection string to your SQL Server
-        string connectionString = "Data Source=YourServer;Initial Catalog=YourDatabase;Integrated Security=True";
-
-        // Prompt the user for username and password
-        Console.Write("Enter Username: ");
-        string username = Console.ReadLine();
-        Console.Write("Enter Password: ");
-        string password = Console.ReadLine();
-
-        // Query to check if the provided username and password exist in the database
-        string query = "SELECT COUNT(*) FROM Login WHERE uname = @username AND passwd = @password";
-
-        using (SqlConnection connection = new SqlConnection(connectionString))
-        using (SqlCommand command = new SqlCommand(query, connection))
+        static void Main(string[] args)
         {
-            // Add parameters to the query to prevent SQL injection
-            command.Parameters.AddWithValue("@username", username);
-            command.Parameters.AddWithValue("@password", password);
 
-            connection.Open();
-            int count = (int)command.ExecuteScalar(); // ExecuteScalar returns the count
 
-            if (count > 0)
+            try
             {
-                Console.WriteLine("Login successful");
+                Console.WriteLine("Enter your Username: ");
+                string username = Console.ReadLine();
+
+                Console.WriteLine("Enter your Password: ");
+                string password = Console.ReadLine();
+
+                string cn = @"Data Source=DESKTOP-O7LF2JA;Initial Catalog=training;Integrated Security=True";
+
+
+
+                SqlConnection connection = new SqlConnection(cn);
+
+                connection.Open();
+
+                string q = "Select count(*) from Login where uname=@username and passwd=@password";
+                SqlCommand command = new SqlCommand(q, connection);
+
+                command.Parameters.AddWithValue("username", username);
+                command.Parameters.AddWithValue("password", password);
+
+                int ch = (int)command.ExecuteNonQuery();
+                if (ch > 0)
+                {
+                    Console.WriteLine("Login Successful.");
+
+                }
+                else
+                {
+                    Console.WriteLine("Login Not Successful.");
+                }
+
             }
-            else
-            {
-                Console.WriteLine("Login Not Successful");
-            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            Console.ReadLine();
         }
     }
+
 }

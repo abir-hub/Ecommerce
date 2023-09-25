@@ -1,3 +1,21 @@
+CREATE TABLE Login
+(
+    uname NVARCHAR(50),
+    passwd NVARCHAR(50)
+);
+
+INSERT INTO Login (uname, passwd) VALUES
+('PMD', 'pwd'),
+('admin', 'Csharp'),
+('Dipankar', 'Adhikary'),
+('guest', 'visitor');
+
+
+
+
+
+
+
 using System;
 using System.Data.SqlClient;
 
